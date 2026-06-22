@@ -2,17 +2,12 @@ spring:
   application:
     name: Nomadly
 
-  datasource:
-    url: jdbc:mysql://localhost:3307/nomadly_db
-    username: root
-    password:
-
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
+server:
+  port: 8761
 
 eureka:
+  instance:
+    hostname: localhost
   client:
     register-with-eureka: false
     fetch-registry: false
