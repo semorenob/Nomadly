@@ -2,10 +2,11 @@
 target/
 *.class
 
-# Configuraciones de IntelliJ IDEA
+# Configuraciones
 .idea/
 *.iml
 *.iws
+.vscode/
 
 # Archivos de log
 *.log
