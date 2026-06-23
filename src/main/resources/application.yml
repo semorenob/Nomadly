@@ -3,18 +3,22 @@ spring:
     name: Nomadly
 
   datasource:
-    url: jdbc:mysql://${MYSQL_HOST:localhost}:3307/nomadly_db
-    username: root
-    password:
+    url: ${MYSQL_URL:jdbc:mysql://localhost:3307/nomadly_db}
+    username: ${MYSQLUSER:root}
+    password: ${MYSQLPASSWORD:}
+    driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: validate
     show-sql: true
 
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
 
 server:
-  port: 8080
+  port: ${PORT:8080}
 
 springdoc:
   swagger-ui:
