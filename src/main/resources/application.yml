@@ -3,15 +3,19 @@ spring:
     name: Nomadly
 
   datasource:
-    url: ${MYSQL_URL:jdbc:mysql://localhost:3307/nomadly_db}
-    username: ${MYSQLUSER:root}
-    password: ${MYSQLPASSWORD:}
+    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://localhost:3307/nomadly_db}
+    username: ${SPRING_DATASOURCE_USERNAME:root}
+    password: ${SPRING_DATASOURCE_PASSWORD:}
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
     hibernate:
       ddl-auto: validate
     show-sql: true
+    database-platform: org.hibernate.dialect.MySQLDialect
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
 
   flyway:
     enabled: true
@@ -28,7 +32,8 @@ springdoc:
 
 eureka:
   client:
+    enabled: ${EUREKA_ENABLED:true}
     service-url:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: ${EUREKA_SERVER_URL:http://localhost:8761/eureka/}
   instance:
     prefer-ip-address: true
