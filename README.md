@@ -1,7 +1,7 @@
 # Proyecto: Nomadly
 
 ## Descripción del Contexto
-Nomadly es una solución de arquitectura de microservicios desarrollada para la gestión integral de un dominio de **ventas** (incluyendo contratos, pagos, seguros y servicios adicionales), aplicando el patrón de diseño CSR (Controller-Service-Repository). El sistema busca garantizar la separación funcional de responsabilidades, la integridad de los datos a través de migraciones automatizadas y una comunicación distribuida eficiente bajo un ecosistema de microservicios.
+Nomadly es una solución de arquitectura de microservicios desarrollada para la gestión integral de un dominio de **ventas** (incluyendo contratos, pagos, seguros y servicios adicionales), aplicando el patrón de diseño CSR (Controller-Service-Repository). El sistema busca garantizar la separación funcional de responsabilidades, la integridad de los datos a través de migraciones automatizadas y una comunicación distribuida eficiente y síncrona mediante **FeignClient** bajo un ecosistema de microservicios.
 
 ## Integrantes
 * Carlos Joaquin Ramirez Gonzalez
@@ -23,9 +23,9 @@ La documentación de los endpoints ha sido generada de forma automatizada median
 2. Clone el repositorio y abra el proyecto en su editor.
 3. Compile el proyecto mediante Maven (`clean` y `compile`).
 4. Inicie los servicios en el siguiente orden estricto:
-    * Inicie el proyecto `eureka-server` (Puerto 8761).
-    * Inicie el proyecto `Nomadly` (Puerto 8080 o dinámico).
-    * Inicie el proyecto `api-gateway`.
+   * Inicie el proyecto `eureka-server` (Puerto 8761).
+   * Inicie el proyecto `Nomadly` (Puerto 8080 o dinámico).
+   * Inicie el proyecto `api-gateway`.
 5. Verifique el registro exitoso en el panel de Eureka: [http://localhost:8761](http://localhost:8761).
 
 ### Despliegue Remoto
