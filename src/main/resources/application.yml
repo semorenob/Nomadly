@@ -17,8 +17,17 @@ spring:
     enabled: true
     baseline-on-migrate: true
 
+  cloud:
+    gateway:
+      mvc:
+        enabled: true
+        headers:
+          max-http-header-size: 32KB
+
 server:
   port: ${PORT:8080}
+  tomcat:
+    max-http-header-size: 32KB
 
 springdoc:
   swagger-ui:
@@ -34,6 +43,3 @@ eureka:
       defaultZone: http://localhost:8080/eureka/
   instance:
     prefer-ip-address: true
-
-spring.cloud.gateway.server.webmvc:
-  enabled: true
