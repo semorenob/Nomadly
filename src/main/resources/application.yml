@@ -25,7 +25,7 @@ spring:
       mvc:
         enabled: true
         headers:
-          max-http-header-size: 32KB
+          max-http-header-size: 131072
 
   jackson:
     serialization:
@@ -34,7 +34,7 @@ spring:
 server:
   port: ${PORT:8080}
   tomcat:
-    max-http-header-size: 32KB
+    max-http-header-size: 131072
     max-swallow-size: -1
 
 springdoc:
@@ -53,3 +53,9 @@ eureka:
     prefer-ip-address: true
     lease-renewal-interval-in-seconds: 10
     lease-expiration-duration-in-seconds: 30
+
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+    org.springframework.web.servlet.DispatcherServlet: DEBUG
+    org.springframework.http.server.reactive: DEBUG
