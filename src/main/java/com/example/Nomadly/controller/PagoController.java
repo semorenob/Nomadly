@@ -32,4 +32,11 @@ public class PagoController {
             @PathVariable Long idReferencia) {
         return ResponseEntity.ok(pagoService.obtenerPorReferencia(idReferencia, tipoDestino));
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> eliminarPago(@PathVariable Long id) {
+        pagoService.eliminarPago(id);
+        return ResponseEntity.noContent().build();
+    }
+
 }

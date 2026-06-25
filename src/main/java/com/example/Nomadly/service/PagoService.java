@@ -29,4 +29,8 @@ public class PagoService {
     public List<Pago> obtenerPorReferencia(Long idReferencia, Pago.TipoDestino tipoDestino) {
         return pagoRepository.findByIdReferenciaAndTipoDestino(idReferencia, tipoDestino);
     }
+
+    public void eliminarPago(Long id) {
+        pagoRepository.deleteById(id);
+    }
 }
